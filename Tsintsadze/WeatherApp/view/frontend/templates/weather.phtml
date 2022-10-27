@@ -1,31 +1,46 @@
-<form action="weather/posted" method="post">
-    <label for="city">City:</label><br>
-    <input type="text" id="city" name="city"><br><br>
-    <table>
-        <thead>
-        <tr>
-            <th>Date/Time</th>
-            <th>Weather</th>
-            <th>Wind</th>
-            <th>Temperature</th>
-            <th>Cloud</th>
-            <th>Humidity</th>
-            <th>Pressure</th>
-        </tr>
+<style>
+    th {
+        font-size: 10px;
+    }
 
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+    td {
+        font-size: 10px;
+    }
 
+    th, td {
+        padding: 2px;
+    }
 
-            </tr>
-
-        </thead>
-    </table>
-    <input type="submit" value="Submit">
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    label {
+        font-size: 20px;
+    }
+    ul {
+        padding-left: 20px;
+    }
+</style>
+<h1>Weather in your city.</h1>
+<form action="/weather/posted/posted" method="post">
+    <label for="city">
+        city
+    </label>
+    <input type="text" id="city" name="city">
+    <button>submit</button>
 </form>
+<table>
+    <ul>
+        <li>City: </li>
+        <li>Country:  </li>
+        <li>Description: </li>
+        <li>Temperature (°C): </li>
+        <li>Feels Like (°C): </li>
+        <li>Pressure (hPa): </li>
+        <li>Humidity (%): </li>
+        <li>Wind Speed (meter/sec): </li>
+        <li>Sunrise (UTC): </li>
+        <li>Sunset (UTC): </li>
+    </ul>
+</table>

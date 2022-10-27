@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="weather_app_data">
+    <table name="weather_data">
         <column name="id" xsi:type="int" nullable="false" identity="true"/>
         <column name="city" xsi:type="varchar" length="90" nullable="true"/>
         <column name="description" xsi:type="varchar" length="64" nullable="true"/>
