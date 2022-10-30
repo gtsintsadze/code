@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Tsintsadze\WeatherApp\Model;
 
 use Magento\Framework\Model\AbstractModel;
@@ -29,6 +30,7 @@ class Weather extends AbstractModel implements WeatherInterface
     {
         return $this->getData(self::CREATED_AT);
     }
+
     /**
      * @param string $city
      * @return WeatherInterface
