@@ -13,8 +13,7 @@ class Url
      */
     public function __construct(
         UrlInterface $urlBuilder
-    )
-    {
+    ) {
         $this->urlBuilder = $urlBuilder;
     }
 
@@ -25,5 +24,4 @@ class Url
     {
         return $this->urlBuilder->getUrl('weather/posted/posted');
     }
-
 }

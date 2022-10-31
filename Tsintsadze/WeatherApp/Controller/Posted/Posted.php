@@ -3,11 +3,11 @@
 namespace Tsintsadze\WeatherApp\Controller\Posted;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\App\Request\Http;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\HTTP\Client\Curl;
 use Magento\Framework\Message\ManagerInterface;
-use Tsintsadze\WeatherApp\Block\Weather;
 use Tsintsadze\WeatherApp\Model\WeatherFactory;
 
 class Posted implements HttpPostActionInterface
@@ -22,13 +22,15 @@ class Posted implements HttpPostActionInterface
 
     protected WeatherFactory $weatherFactory;
 
-    protected Weather $dataPersistor;
+    protected DataPersistorInterface $dataPersistor;
 
     /**
      * @param Curl $curl
      * @param Http $request
      * @param RedirectFactory $redirectFactory
      * @param ManagerInterface $messageManager
+     * @param WeatherFactory $weatherFactory
+     * @param DataPersistorInterface $dataPersistor
      */
     public function __construct(
         Curl $curl,
@@ -36,7 +38,7 @@ class Posted implements HttpPostActionInterface
         RedirectFactory $redirectFactory,
         ManagerInterface $messageManager,
         WeatherFactory $weatherFactory,
-        Weather $dataPersistor
+        DataPersistorInterface $dataPersistor
     ) {
         $this->curl = $curl;
         $this->request = $request;
@@ -77,14 +79,23 @@ class Posted implements HttpPostActionInterface
             $weatherObject->setSunSet($result['sys']['sunset']);
             $weatherObject->save();
 
-
-            $this->dataPersistor->setData("country", $result['sys']['country']);
-
+            $this->dataPersistor->set("city", $this->request->getParam('city'));
+            $this->dataPersistor->set("description", $result['weather'][0]['description']);
+            $this->dataPersistor->set("country", $result['sys']['country']);
+            $this->dataPersistor->set("temperature", $result['main']['temp']);
+            $this->dataPersistor->set("feels_like", $result['main']['feels_like']);
+            $this->dataPersistor->set("pressure", $result['main']['pressure']);
+            $this->dataPersistor->set("humidity", $result['main']['humidity']);
+            $this->dataPersistor->set("wind_speed", $result['wind']['speed']);
+            $this->dataPersistor->set("sunrise", $result['sys']['sunrise']);
+            $this->dataPersistor->set("sunset", $result['sys']['sunset']);
 
             $this->messageManager->addSuccessMessage("Data Saved IN database!");
             return $redirect->setRefererUrl();
         }
+
         $this->messageManager->addErrorMessage("City field is empty !");
+
         return $redirect->setRefererUrl();
     }
 }

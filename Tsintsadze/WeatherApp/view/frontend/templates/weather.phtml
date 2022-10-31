@@ -2,6 +2,7 @@
 /** @var Tsintsadze\WeatherApp\Block\Weather $block */
 
 $city = $block->getCity();
+$block->getWeatherData();
 ?>
 
 
@@ -39,15 +40,22 @@ $city = $block->getCity();
 </form>
 <div>
     <ul>
-        <li>City: </li>
-        <li>Country: <?= $block->getCountry()?></li>
-        <li>Description: </li>
-        <li>Temperature (°C): </li>
-        <li>Feels Like (°C): </li>
-        <li>Pressure (hPa): </li>
-        <li>Humidity (%): </li>
-        <li>Wind Speed (meter/sec): </li>
-        <li>Sunrise (UTC): </li>
-        <li>Sunset (UTC): </li>
+        <li>City: <?= $city ?> </li>
+        <li>Country: <?= $block->getCountry() ?></li>
+        <li>Description: <?= $block->getDescription() ?> </li>
+        <li>Temperature (°C): <?= $block->getTemperature() ?> </li>
+        <li>Feels Like (°C): <?= $block->getFeelsLike() ?></li>
+        <li>Pressure (hPa): <?= $block->getPressure() ?></li>
+        <li>Humidity (%): <?= $block->getHumidity() ?></li>
+        <li>Wind Speed (meter/sec): <?= $block->getWindSpeed() ?></li>
+        <li>Sunrise (UTC): <?= $block->getSunRise() ?></li>
+        <li>Sunset (UTC): <?= $block->getSunSet() ?></li>
     </ul>
+</div>
+
+<div>
+
+    <form action="weather/post/getpdf">
+        <button><?=__("Print All")?></button>
+    </form>
 </div>

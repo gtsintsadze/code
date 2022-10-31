@@ -2,14 +2,13 @@
 
 namespace Tsintsadze\WeatherApp\Block;
 
+use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\View\Element\Template;
 use Tsintsadze\WeatherApp\Api\Data\WeatherInterface;
 use Tsintsadze\WeatherApp\Model\ResourceModel\Weather as WeatherResource;
 use Tsintsadze\WeatherApp\Model\ResourceModel\Weather\Collection;
 use Tsintsadze\WeatherApp\Model\ResourceModel\Weather\CollectionFactory;
 use Tsintsadze\WeatherApp\Model\Url;
-use Magento\Framework\App\Request\DataPersistorInterface;
-
 
 class Weather extends Template
 {
@@ -54,33 +53,24 @@ class Weather extends Template
         return $this->getDataPersistorItem(WeatherInterface::COUNTRY);
     }
 
-    /**
-     * @return mixed|null
-     */
     public function getSunRise()
     {
         return $this->getDataPersistorItem(WeatherInterface::SUNRISE);
     }
 
-    /**
-     * @return mixed|null
-     */
+
     public function getSunSet()
     {
         return $this->getDataPersistorItem(WeatherInterface::SUNSET);
     }
 
-    /**
-     * @return mixed|null
-     */
+
     public function getTemperature()
     {
         return $this->getDataPersistorItem(WeatherInterface::TEMPERATURE);
     }
 
-    /**
-     * @return mixed|null
-     */
+
     public function getFeelsLike()
     {
         return $this->getDataPersistorItem(WeatherInterface::FEELS_LIKE);
