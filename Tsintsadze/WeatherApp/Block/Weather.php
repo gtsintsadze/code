@@ -58,18 +58,15 @@ class Weather extends Template
         return $this->getDataPersistorItem(WeatherInterface::SUNRISE);
     }
 
-
     public function getSunSet()
     {
         return $this->getDataPersistorItem(WeatherInterface::SUNSET);
     }
 
-
     public function getTemperature()
     {
         return $this->getDataPersistorItem(WeatherInterface::TEMPERATURE);
     }
-
 
     public function getFeelsLike()
     {
@@ -124,6 +121,26 @@ class Weather extends Template
     public function getTable(): ?array
     {
         return $this->weatherResource->getFields();
+    }
+
+    public function getSunsetFormatted(): ?string
+    {
+        $sunset = $this->dataPersistor->get('sunset');
+        $this->dataPersistor->clear('sunset');
+        if ($sunset) {
+            return date('m/d/Y H:i:s', $sunset);
+        }
+        return null;
+    }
+
+    public function getSunRiseFormatted(): ?string
+    {
+        $sunrise = $this->dataPersistor->get('sunrise');
+        $this->dataPersistor->clear('sunrise');
+        if ($sunrise) {
+            return date('m/d/Y H:i:s', $sunrise);
+        }
+        return null;
     }
 
     public function getPostUrl(): string

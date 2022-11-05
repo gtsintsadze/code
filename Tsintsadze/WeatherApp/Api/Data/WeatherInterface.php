@@ -13,21 +13,19 @@ interface WeatherInterface
     public const PRESSURE = 'pressure';
     public const HUMIDITY = 'humidity';
     public const WIND_SPEED = 'wind_speed';
-    public const SUNRISE = 'sunrise';
-    public const SUNSET = 'sunset';
+    public const SUNRISE = 'sun_rise';
+    public const SUNSET = 'sun_set';
     public const CREATED_AT = 'created_at';
 
     /**
-     * @param $id
-     * @return WeatherInterface
+     * @return int
      */
-    public function getWeatherId($id): WeatherInterface;
+    public function getWeatherId(): int;
 
     /**
-     * @param $createdAt
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCreatedAt($createdAt): WeatherInterface;
+    public function getCreatedAt(): string;
 
     /**
      * @param string $city
@@ -36,10 +34,9 @@ interface WeatherInterface
     public function setCity(string $city): WeatherInterface;
 
     /**
-     * @param $city
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCity($city): WeatherInterface;
+    public function getCity(): string;
 
     /**
      * @param string $country
@@ -48,10 +45,9 @@ interface WeatherInterface
     public function setCountry(string $country): WeatherInterface;
 
     /**
-     * @param $country
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCountry($country): WeatherInterface;
+    public function getCountry(): string;
 
     /**
      * @param string $description
@@ -60,10 +56,9 @@ interface WeatherInterface
     public function setDescription(string $description): WeatherInterface;
 
     /**
-     * @param $description
-     * @return WeatherInterface
+     * @return string
      */
-    public function getDescription($description): WeatherInterface;
+    public function getDescription(): string;
 
     /**
      * @param float $temperature
@@ -72,10 +67,9 @@ interface WeatherInterface
     public function setTemperature(float $temperature): WeatherInterface;
 
     /**
-     * @param $temperature
-     * @return WeatherInterface
+     * @return float
      */
-    public function getTemperature($temperature): WeatherInterface;
+    public function getTemperature():float;
 
     /**
      * @param float $feelsLike
@@ -84,10 +78,9 @@ interface WeatherInterface
     public function setFeelsLike(float $feelsLike): WeatherInterface;
 
     /**
-     * @param $feelsLike
-     * @return WeatherInterface
+     * @return float
      */
-    public function getFeelsLike($feelsLike): WeatherInterface;
+    public function getFeelsLike(): float;
 
     /**
      * @param int $pressure
@@ -96,10 +89,9 @@ interface WeatherInterface
     public function setPressure(int $pressure): WeatherInterface;
 
     /**
-     * @param $pressure
-     * @return WeatherInterface
+     * @return int
      */
-    public function getPressure($pressure): WeatherInterface;
+    public function getPressure(): int;
 
     /**
      * @param int $humidity
@@ -108,10 +100,9 @@ interface WeatherInterface
     public function setHumidity(int $humidity): WeatherInterface;
 
     /**
-     * @param $humidity
-     * @return WeatherInterface
+     * @return int
      */
-    public function getHumidity($humidity): WeatherInterface;
+    public function getHumidity(): int;
 
     /**
      * @param float $windSpeed
@@ -120,22 +111,17 @@ interface WeatherInterface
     public function setWindSpeed(float $windSpeed): WeatherInterface;
 
     /**
-     * @param $windSpeed
-     * @return WeatherInterface
+     * @return float
      */
-    public function getWindSpeed($windSpeed): WeatherInterface;
+    public function getWindSpeed(): float;
 
-    /**
-     * @param string $sunRise
-     * @return WeatherInterface
-     */
+
     public function setSunRise(string $sunRise): WeatherInterface;
 
     /**
-     * @param $sunRise
-     * @return WeatherInterface
+     * @return string
      */
-    public function getSunRise($sunRise): WeatherInterface;
+    public function getSunRise(): string;
 
     /**
      * @param string $sunSet
@@ -144,8 +130,7 @@ interface WeatherInterface
     public function setSunSet(string $sunSet): WeatherInterface;
 
     /**
-     * @param $sunSet
-     * @return WeatherInterface
+     * @return string
      */
-    public function getSunSet($sunSet): WeatherInterface;
+    public function getSunSet(): string;
 }

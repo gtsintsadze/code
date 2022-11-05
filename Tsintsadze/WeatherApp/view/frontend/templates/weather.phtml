@@ -48,14 +48,14 @@ $block->getWeatherData();
         <li>Pressure (hPa): <?= $block->getPressure() ?></li>
         <li>Humidity (%): <?= $block->getHumidity() ?></li>
         <li>Wind Speed (meter/sec): <?= $block->getWindSpeed() ?></li>
-        <li>Sunrise (UTC): <?= $block->getSunRise() ?></li>
-        <li>Sunset (UTC): <?= $block->getSunSet() ?></li>
+        <li>Sunrise (UTC): <?= $block->getSunRiseFormatted() ?></li>
+        <li>Sunset (UTC): <?= $block->getSunsetFormatted() ?></li>
     </ul>
 </div>
 
 <div>
 
-    <form action="weather/post/getpdf">
+    <form action="weather/posted/topdf">
         <button><?=__("Print All")?></button>
     </form>
 </div>

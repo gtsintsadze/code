@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Tsintsadze\WeatherApp\Model;
 
 use Magento\Framework\Model\AbstractModel;
@@ -14,19 +13,18 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $id
-     * @return WeatherInterface
+     * @return int
      */
-    public function getWeatherId($id): WeatherInterface
+    public function getWeatherId(): int
     {
         return $this->getData(self::ID);
     }
 
     /**
-     * @param $createdAt
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCreatedAt($createdAt): WeatherInterface
+
+    public function getCreatedAt(): string
     {
         return $this->getData(self::CREATED_AT);
     }
@@ -41,10 +39,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $city
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCity($city): WeatherInterface
+    public function getCity(): string
     {
         return $this->getData(self::CITY);
     }
@@ -59,10 +56,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $country
-     * @return WeatherInterface
+     * @return string
      */
-    public function getCountry($country): WeatherInterface
+    public function getCountry(): string
     {
         return $this->getData(self::COUNTRY);
     }
@@ -77,10 +73,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $description
-     * @return WeatherInterface
+     * @return string
      */
-    public function getDescription($description): WeatherInterface
+    public function getDescription(): string
     {
         return $this->getData(self::DESCRIPTION);
     }
@@ -95,10 +90,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $temperature
-     * @return WeatherInterface
+     * @return float
      */
-    public function getTemperature($temperature): WeatherInterface
+    public function getTemperature(): float
     {
         return $this->getData(self::TEMPERATURE);
     }
@@ -113,10 +107,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $feelsLike
-     * @return WeatherInterface
+     * @return float
      */
-    public function getFeelsLike($feelsLike): WeatherInterface
+    public function getFeelsLike(): float
     {
         return $this->getData(self::FEELS_LIKE);
     }
@@ -131,10 +124,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $pressure
-     * @return WeatherInterface
+     * @return int
      */
-    public function getPressure($pressure): WeatherInterface
+    public function getPressure(): int
     {
         return $this->getData(self::PRESSURE);
     }
@@ -149,10 +141,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $humidity
-     * @return WeatherInterface
+     * @return int
      */
-    public function getHumidity($humidity): WeatherInterface
+    public function getHumidity(): int
     {
         return $this->getData(self::HUMIDITY);
     }
@@ -167,10 +158,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $windSpeed
-     * @return WeatherInterface
+     * @return float
      */
-    public function getWindSpeed($windSpeed): WeatherInterface
+    public function getWindSpeed(): float
     {
         return $this->getData(self::WIND_SPEED);
     }
@@ -185,10 +175,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $sunRise
-     * @return WeatherInterface
+     * @return string
      */
-    public function getSunRise($sunRise): WeatherInterface
+    public function getSunRise(): string
     {
         return $this->getData(self::SUNRISE);
     }
@@ -203,10 +192,9 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * @param $sunSet
-     * @return WeatherInterface
+     * @return string
      */
-    public function getSunSet($sunSet): WeatherInterface
+    public function getSunSet(): string
     {
         return $this->getData(self::SUNSET);
     }
